@@ -1,0 +1,17 @@
+{
+	"name": "LocalLinkedSqlServer",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"connectionString": "integrated security=True;data source=WPG03724;initial catalog=bc_uw_mainland",
+			"userName": "OBS\\oadewoyin",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJjOGE0MjY3Mi1kMGMwLTQzZGQtYWI1ZS04ZjQxYzQyYzM0MzUiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "SqlServerIntegrationRuntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
