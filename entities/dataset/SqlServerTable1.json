@@ -1,0 +1,64 @@
+{
+	"name": "SqlServerTable1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LocalLinkedSqlServer",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "InputNumber",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "RecordNumber",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "IndexNumber",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "AddressType",
+				"type": "char"
+			},
+			{
+				"name": "AddressLine1",
+				"type": "char"
+			},
+			{
+				"name": "AddressLine2",
+				"type": "char"
+			},
+			{
+				"name": "AddressLine3",
+				"type": "char"
+			},
+			{
+				"name": "AddressLine4",
+				"type": "char"
+			},
+			{
+				"name": "City",
+				"type": "char"
+			},
+			{
+				"name": "StateOrProv",
+				"type": "char"
+			},
+			{
+				"name": "ZipPostalCode",
+				"type": "char"
+			}
+		],
+		"typeProperties": {
+			"schema": "UWLM",
+			"table": "CIEAddresses"
+		}
+	}
+}

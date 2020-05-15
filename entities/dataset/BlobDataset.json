@@ -1,0 +1,30 @@
+{
+	"name": "BlobDataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "GwaltStorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "addresses.txt",
+				"folderPath": "uw_ml_bc",
+				"container": "datasources"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			}
+		]
+	}
+}
