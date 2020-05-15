@@ -1,0 +1,90 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "gamerwaltdatafactory"
+		},
+		"LocalLinkedSqlServer_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LocalLinkedSqlServer'"
+		},
+		"LocalLinkedSqlServer_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LocalLinkedSqlServer'"
+		},
+		"GwaltStorage_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'GwaltStorage'"
+		},
+		"GamerwaltSSISIntegrationRuntime_properties_typeProperties_ssisProperties_catalogInfo_catalogServerEndpoint": {
+			"type": "string",
+			"defaultValue": "dwsqlsukdemo.database.windows.net"
+		},
+		"GamerwaltSSISIntegrationRuntime_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminUserName": {
+			"type": "string",
+			"defaultValue": "quickstartadmin"
+		},
+		"GamerwaltSSISIntegrationRuntime_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminPassword": {
+			"type": "secureString"
+		},
+		"LocalLinkedSqlServer_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "OBS\\oadewoyin"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"GwaltStorage_connectionString": {
+						"value": "[parameters('GwaltStorage_connectionString')]"
+					},
+					"LocalLinkedSqlServer_connectionString": {
+						"value": "[parameters('LocalLinkedSqlServer_connectionString')]"
+					},
+					"LocalLinkedSqlServer_password": {
+						"value": "[parameters('LocalLinkedSqlServer_password')]"
+					},
+					"GamerwaltSSISIntegrationRuntime_properties_typeProperties_ssisProperties_catalogInfo_catalogServerEndpoint": {
+						"value": "[parameters('GamerwaltSSISIntegrationRuntime_properties_typeProperties_ssisProperties_catalogInfo_catalogServerEndpoint')]"
+					},
+					"GamerwaltSSISIntegrationRuntime_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminUserName": {
+						"value": "[parameters('GamerwaltSSISIntegrationRuntime_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminUserName')]"
+					},
+					"GamerwaltSSISIntegrationRuntime_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminPassword": {
+						"value": "[parameters('GamerwaltSSISIntegrationRuntime_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminPassword')]"
+					},
+					"LocalLinkedSqlServer_properties_typeProperties_userName": {
+						"value": "[parameters('LocalLinkedSqlServer_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}

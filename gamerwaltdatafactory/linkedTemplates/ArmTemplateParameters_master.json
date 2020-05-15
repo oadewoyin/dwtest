@@ -1,0 +1,36 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "gamerwaltdatafactory"
+		},
+		"LocalLinkedSqlServer_connectionString": {
+			"value": ""
+		},
+		"LocalLinkedSqlServer_password": {
+			"value": ""
+		},
+		"GwaltStorage_connectionString": {
+			"value": ""
+		},
+		"GamerwaltSSISIntegrationRuntime_properties_typeProperties_ssisProperties_catalogInfo_catalogServerEndpoint": {
+			"value": "dwsqlsukdemo.database.windows.net"
+		},
+		"GamerwaltSSISIntegrationRuntime_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminUserName": {
+			"value": "quickstartadmin"
+		},
+		"GamerwaltSSISIntegrationRuntime_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminPassword": {
+			"value": ""
+		},
+		"LocalLinkedSqlServer_properties_typeProperties_userName": {
+			"value": "OBS\\oadewoyin"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
